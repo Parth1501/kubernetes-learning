@@ -10,3 +10,28 @@ spec:
       ports:
         - containerPort: 3306
           name: "mysqlserver"
+      env:
+      - name: SECRET_USERNAME        
+        valueFrom:
+          secretKeyRef:
+            name: demo                #Name of secret
+            key: username             #secret key
+      - name: SECRET_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: demo
+            key: password
+            
+      - name: SECRET_ROOT_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: demo
+            key: root_password
+            
+      - name: SECRET_DATABASE
+        valueFrom:
+          secretKeyRef:
+            name: demo
+            key: database
+            
+            
