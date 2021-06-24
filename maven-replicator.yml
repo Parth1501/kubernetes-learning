@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: maven-repl-controller
+spec:
+  replicas: 3
+  selector:
+    app: maven-hello-world
+  template:
+    metadata:
+      labels:
+        app: maven-hello-world
+    spec:
+      containers:
+      - name: maven-project
+        image: parth252000/maven-project
+        ports:
+        - name: maven-port
+          containerPort: 3900
