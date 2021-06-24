@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mysql-pod
+  name: mysqlPod
 spec:
   containers:
-    - name: mysql-v5.7
+    - name: mysqlVv5.7
       image: mysql:5.7
       ports:
         - containerPort: 3306
