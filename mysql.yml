@@ -11,6 +11,7 @@ spec:
     ports:
     - name: mysql-port
       containerPort: 3306
+    restartPolicy: Never
     env:
       - name: MYSQL_ROOT_PASSWORD
         valueFrom:
@@ -32,4 +33,4 @@ spec:
           secretKeyRef:
             name: helloworld-secrets
             key: database
-    restartPolicy: Never
+   
