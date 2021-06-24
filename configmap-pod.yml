@@ -7,4 +7,10 @@ spec:
   - name: demo
     image: alpine
     command: ["sleep","3600"]
+    env:
+    - name: PLAYER_INITIAL_VALUE
+      valueFrom:
+        configMapKeyRef:
+          name: game-demo
+          key: player_initial_lives
  
